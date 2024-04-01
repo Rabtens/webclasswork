@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fafafa;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 350px;
+      margin: 100px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h2 {
+      font-size: 28px;
+      margin-bottom: 20px;
+      text-align: center;
+      color: #333;
+    }
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+      color: #666;
+    }
+    input[type="text"], input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    input[type="submit"] {
+      width: 100%;
+      padding: 10px;
+      background-color: #3897f0;
+      border: none;
+      border-radius: 5px;
+      color: #fff;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    input[type="submit"]:hover {
+      background-color: #357ae8;
+    }
+    .text-center {
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h2>Log In</h2>
+  <form method="POST" action="/form">     
+      <label>Name</label><input name="name" type="text" value="" />
+      <label>Address</label><input name="address" type="text" value="" />
+      <input type="submit" value="Submit" />
+  </form>
+  <div class="text-center">
+    <p> Forgot Address <a href="#">Reset it here</a></p>
+    <p>Don't have an address <a href="#">Sign up</a></p>
+  </div>
+</div>
+</body>
+</html>
