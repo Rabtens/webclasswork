@@ -11,11 +11,19 @@ func formHandler(w http.ResponseWriter, r *http.Request) {
 		fmt.Fprintf(w, "ParseForm() err: %v", err)
 		return
 	}
-	fmt.Fprintf(w, "POST request successful")
-	name := r.FormValue("name")
-	address := r.FormValue("address")
-	fmt.Fprintf(w, "Name = %s\n", name)
-	fmt.Fprintf(w, "Address = %s\n", address)
+	fmt.Fprintf(w, "POST request successful\n")
+	username := r.FormValue("username")
+	password := r.FormValue("password")
+	fmt.Fprintf(w, "Username = %s\n", username)
+	fmt.Fprintf(w, "Password = %s\n", password)
+
+	// Simulate calling authentication
+	authResult := authenticate(username, password)
+	if authResult {
+		fmt.Println("Authentication Successful")
+	} else {
+		fmt.Println("Authentication failed")
+	}
 }
 
 func helloHandler(w http.ResponseWriter, r *http.Request) {
@@ -30,6 +38,11 @@ func helloHandler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	fmt.Fprintf(w, "Hello!")
+}
+
+func authenticate(username, password string) bool {
+	// Simulated authentication logic
+	return true // Always return true for demonstration
 }
 
 func main() {
